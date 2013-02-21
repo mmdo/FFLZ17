@@ -14,3 +14,8 @@ General comments (optional).
 */
 
 @import url(css/unsemantic.css);
+
+.post_thumbnail {
+	float: left;
+	margin-right: 1em;
+}

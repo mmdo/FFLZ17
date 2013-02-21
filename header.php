@@ -1,1 +1,1 @@
-Das ist der header!
+<h1><?php bloginfo('name'); ?></h1>
