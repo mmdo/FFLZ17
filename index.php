@@ -6,18 +6,27 @@
     <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
 	<link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css"/>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <!-- google font -->
 	
 	
 </head>  
 <body> 
 	<div id="wrapper">
 		<header role="banner" class="grid-container">
-			<div class="grid-100">
+			<div class="grid-100 hide-on-mobile">
 				<?php get_header(); ?>
 				<nav>
-					
-					<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-					
+					<div id="navmenu">
+						<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+					</div>
+				</nav>
+			</div>
+			<div class="grid-100 hide-on-desktop">
+				<?php get_header(); ?>
+				<nav>
+					<div id="navmenu-mobile">
+						<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+					</div>
 				</nav>
 			</div>
 		</header>
