@@ -14,6 +14,7 @@ General comments (optional).
 */
 
 @import url(css/unsemantic.css);
+@import url(css/button.css);
 
 body {
 	background-image:url('./images/bg2.png');
@@ -21,24 +22,31 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+@media screen and (max-width: 767px) {
+    body { background:#fff; }
+}
+
 #navmenu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none; }
 #navmenu li {display: inline; }
 #navmenu ul li a {text-decoration:none;  margin: 4px; padding: 5px 20px 5px 20px; color: blue; }
 #navmenu ul li a:hover {color: purple; background: #CCC; }
 
-#navmenu-mobile {text-align: center; }
+/*#navmenu-mobile {text-align: center; } /* OLD MOBILE NAVIGATION MENU
 #navmenu-mobile ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none; }
-/*#navmenu-mobile li {display: inline; }*/
-#navmenu-mobile ul li a {text-decoration:none;  margin: 4px; padding: 5px 20px 5px 20px; color: blue; }
-#navmenu-mobile ul li a:hover {color: purple; background: #CCC; }
+/*#navmenu-mobile li {display: inline; }
+#navmenu-mobile ul li a {text-decoration:none;  margin: 4px; padding: 1px ; color: blue; background: #CCC;}
+#navmenu-mobile ul li a:hover {color: purple; background: #BBB; }*/
 
 .grid-container {
 	background-color:#FFF;
 	border-color:#000;
 }
 
-
 .post_thumbnail {
 	float: left;
 	margin-right: 1em;
+}
+
+#footer {
+	text-align:center;
 }

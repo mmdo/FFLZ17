@@ -6,37 +6,20 @@
     <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
 	<link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css"/>
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <!-- google font -->
-	
-	
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <!-- google font -->	
 </head>  
 <body> 
 	<div id="wrapper">
 		<header role="banner" class="grid-container">
-			<div class="grid-100 hide-on-mobile">
-				<?php get_header(); ?>
-				<nav>
-					<div id="navmenu">
-						<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-					</div>
-				</nav>
-			</div>
-			<div class="grid-100 hide-on-desktop">
-				<?php get_header(); ?>
-				<nav>
-					<div id="navmenu-mobile">
-						<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-					</div>
-				</nav>
-			</div>
+			<?php get_header(); ?>
 		</header>
 		<div role="main" class="grid-container">
 			<div class="grid-70 mobile-grid-100">
-				<p><strong>Aktuelles:</strong></p>
+				<!--<p><strong>Aktuelles:</strong></p>-->
 				<!-- The loop -->
 				<?php query_posts( 'cat=1' ); ?>
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<?php the_title( '<h3>' , '</h3>' ); ?>
+				<?php the_title( '<h2>' , '</h2>' ); ?>
 				<div class="post_thumbnail">
 					<?php if ( has_post_thumbnail() ) {
 					the_post_thumbnail(); // Thumbnail vorhanden
@@ -55,10 +38,10 @@
 			</div>
 			<div class="grid-30 mobile-grid-100">
 				<div class="grid-100 mobile-grid-50">
-					<p><strong>N&auml;chste Termine:</strong></p>Der sch&auml;bige Rest. 
+					<h2>N&auml;chste Termine:</h2>Der sch&auml;bige Rest. 
 				</div>
 				<div class="grid-100 mobile-grid-50">
-					<p><strong>Letzte Eins&auml;tze:</strong></p>
+					<h2>Letzte Eins&auml;tze:</h2>
 					<table>
 						<?php query_posts('cat=2'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 48 Massenanfall von Verletzten -->
 						<?php if(have_posts() ) : while ( have_posts() ) : the_post(); /* start the loop */ ?>
@@ -74,7 +57,7 @@
 			<div class="grid-50 mobile-grid-100">
 				<?php query_posts('page_id=4'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 4 Loeschzug -->
 				<?php if(have_posts) : the_post(); /* start the loop */ ?>
-				<?php the_title( '<h3>' , '</h3>' ); ?>
+				<?php the_title( '<h2>' , '</h2>' ); ?>
 				<div class="post_thumbnail">
 					<?php if ( has_post_thumbnail() ) {
 					the_post_thumbnail(); // Thumbnail vorhanden
@@ -90,7 +73,7 @@
 			<div class="grid-50 mobile-grid-100">
 				<?php query_posts('page_id=7'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 7 Jugendfeuerwehr -->
 				<?php if(have_posts) : the_post(); /* start the loop */ ?>
-				<?php the_title( '<h3>' , '</h3>' ); ?>
+				<?php the_title( '<h2>' , '</h2>' ); ?>
 				<?php the_excerpt(); /* prints the content */ ?>
 				<?php endif; /* end the loop */ ?>
 			</div>
@@ -98,25 +81,25 @@
 			<div class="grid-33 mobile-grid-100">
 				<?php query_posts('page_id=41'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 41 First Responder -->
 				<?php if(have_posts) : the_post(); /* start the loop */ ?>
-				<?php the_title( '<h3>' , '</h3>' ); ?>
+				<?php the_title( '<h2>' , '</h2>' ); ?>
 				<?php the_excerpt(); /* prints the content */ ?>
 				<?php endif; /* end the loop */ ?>
 			</div>
 			<div class="grid-33 mobile-grid-100">
 				<?php query_posts('page_id=45'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 45 Spezialeinheit Loeschwasserversorgung -->
 				<?php if(have_posts) : the_post(); /* start the loop */ ?>
-				<?php the_title( '<h3>' , '</h3>' ); ?>
+				<?php the_title( '<h2>' , '</h2>' ); ?>
 				<?php the_excerpt(); /* prints the content */ ?>
 				<?php endif; /* end the loop */ ?>
 			</div>
 			<div class="grid-33 mobile-grid-100">
 				<?php query_posts('page_id=48'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 48 Massenanfall von Verletzten -->
 				<?php if(have_posts) : the_post(); /* start the loop */ ?>
-				<?php the_title( '<h3>' , '</h3>' ); ?>
+				<?php the_title( '<h2>' , '</h2>' ); ?>
 				<?php the_excerpt(); /* prints the content */ ?>
 				<?php endif; /* end the loop */ ?>
 			</div>
-			<div class="grid-100">
+			<div class="grid-100" id="footer">
 				<?php get_footer(); ?>	 
 			</div>
 		</div>
