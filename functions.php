@@ -4,12 +4,21 @@ function register_my_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
+	  'footer-menu' => __( 'Footer Menu' ),
       'extra-menu' => __( 'Extra Menu' )
     )
   );
 }
 add_action( 'init', 'register_my_menus' );
 
+//For widgets
+if ( function_exists('register_sidebar') )
+register_sidebar(array(
+'before_widget' => '<div id="%1$s" class="widget %2$s">',
+'after_widget' => '</div>',
+'before_title' => '<div class="title">',
+'after_title' => '</div>',
+));
 
 add_post_type_support( 'page', 'excerpt' );
 

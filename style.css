@@ -31,11 +31,19 @@ body {
 #navmenu ul li a {text-decoration:none;  margin: 4px; padding: 5px 20px 5px 20px; color: blue; }
 #navmenu ul li a:hover {color: purple; background: #CCC; }
 
+#footermenu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none; }
+#footermenu li {display: inline; }
+#footermenu ul li a {color: blue; }
+#footermenu ul li a:hover {}
+
+#sidebar ul{list-style-type: none; text-align:left; float: left; padding: 0; margin: 0;}
+.textwidget ul{list-style-type: none; }
 /*#navmenu-mobile {text-align: center; } /* OLD MOBILE NAVIGATION MENU
 #navmenu-mobile ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none; }
 /*#navmenu-mobile li {display: inline; }
 #navmenu-mobile ul li a {text-decoration:none;  margin: 4px; padding: 1px ; color: blue; background: #CCC;}
 #navmenu-mobile ul li a:hover {color: purple; background: #BBB; }*/
+
 
 .grid-container {
 	background-color:#FFF;

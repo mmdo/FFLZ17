@@ -38,24 +38,29 @@
 			</div>
 			<div class="grid-30 mobile-grid-100">
 				<div class="grid-100 mobile-grid-50">
-					<h2>N&auml;chste Termine:</h2>Der sch&auml;bige Rest. 
+					<h2>N&auml;chste Termine:</h2>Inhalte folgen... 
 				</div>
 				<div class="grid-100 mobile-grid-50">
 					<h2>Letzte Eins&auml;tze:</h2>
 					<table>
-						<?php query_posts('cat=2'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 48 Massenanfall von Verletzten -->
+						<?php query_posts('cat=2'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- cat 2 Einsaetze -->
 						<?php if(have_posts() ) : while ( have_posts() ) : the_post(); /* start the loop */ ?>
 						<?php the_content(); /* prints the content */ ?>
 						<?php endwhile; else: ?>
-						<p><?php _e('Keine Eins&auml:tze eingetragen.'); ?></p>
+						<p><?php _e('Keine Eins&aumltze gefunden.'); ?></p>
 				<?php endif; ?>
 					</table>
 					
 				</div>
+				<div class="grid-100 hide-on-mobile" id="sidebar"><!-- FOR WIDGETS -->
+						<ul>
+							<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : endif; ?>
+						</ul>
+				</div>
 			</div>
 			<div class="clear"></div>
 			<div class="grid-50 mobile-grid-100">
-				<?php query_posts('page_id=4'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 4 Loeschzug -->
+				<?php query_posts('page_id=5'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 4 Loeschzug -->
 				<?php if(have_posts) : the_post(); /* start the loop */ ?>
 				<?php the_title( '<h2>' , '</h2>' ); ?>
 				<div class="post_thumbnail">
@@ -70,7 +75,7 @@
 				<?php the_excerpt(); /* prints the content */ ?>
 				<?php endif; /* end the loop */ ?>
 			</div>
-			<div class="grid-50 mobile-grid-100">
+			<div class="grid-50 mobile-grid-100" >
 				<?php query_posts('page_id=7'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 7 Jugendfeuerwehr -->
 				<?php if(have_posts) : the_post(); /* start the loop */ ?>
 				<?php the_title( '<h2>' , '</h2>' ); ?>
@@ -79,21 +84,21 @@
 			</div>
 			<div class="clear"></div>
 			<div class="grid-33 mobile-grid-100">
-				<?php query_posts('page_id=41'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 41 First Responder -->
+				<?php query_posts('page_id=11'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 41 First Responder -->
 				<?php if(have_posts) : the_post(); /* start the loop */ ?>
 				<?php the_title( '<h2>' , '</h2>' ); ?>
 				<?php the_excerpt(); /* prints the content */ ?>
 				<?php endif; /* end the loop */ ?>
 			</div>
 			<div class="grid-33 mobile-grid-100">
-				<?php query_posts('page_id=45'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 45 Spezialeinheit Loeschwasserversorgung -->
+				<?php query_posts('page_id=15'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 45 Spezialeinheit Loeschwasserversorgung -->
 				<?php if(have_posts) : the_post(); /* start the loop */ ?>
 				<?php the_title( '<h2>' , '</h2>' ); ?>
 				<?php the_excerpt(); /* prints the content */ ?>
 				<?php endif; /* end the loop */ ?>
 			</div>
 			<div class="grid-33 mobile-grid-100">
-				<?php query_posts('page_id=48'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 48 Massenanfall von Verletzten -->
+				<?php query_posts('page_id=13'); /* assign page id SINGLE POST EXCERPT*/ ?><!-- 48 Massenanfall von Verletzten -->
 				<?php if(have_posts) : the_post(); /* start the loop */ ?>
 				<?php the_title( '<h2>' , '</h2>' ); ?>
 				<?php the_excerpt(); /* prints the content */ ?>
